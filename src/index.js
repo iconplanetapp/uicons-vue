@@ -45,7 +45,9 @@ export default {
                         throw new Exception('"packages" must be an array.', 'Invalid config value')
                 }
 
-                if (!packages.length)
+                if (packages.length === 0)
+                    packages = ['all']
+                else if (packages.indexOf('all') > -1)
                     packages = ['all']
 
                 $IconPlanet.packages = packages
@@ -63,9 +65,10 @@ export default {
 
                 packages.map(i => {
                     try {
-                        import(`@iconplanet/uicons/css/ip-${i}.css`)
+                        const filePath = `@iconplanet/uicons/css/ip-${i}.css`
+                        require(filePath)
                     } catch (e) {
-                        throw new Exception(`Webfont stylesheet file for "${i}" package, did not exist.`, 'File not found')
+                        throw new Exception(`Webfont stylesheet file for "${filePath}" package, did not exist.`, 'File not found')
                     }
                 })
 
