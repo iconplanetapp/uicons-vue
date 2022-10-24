@@ -1,6 +1,6 @@
 {
   "name": "@iconplanet/uicons-vue",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Vue plugin to add all functionality to add thausends perfect icons into your project. This package gives you special vue component to add easier IconPlanet Uicons into your Vue.js web application.",
   "main": "./src/index.js",
   "scripts": {
