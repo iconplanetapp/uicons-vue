@@ -1,5 +1,5 @@
 <template>
-    <i v-if="type == 'webfont'" :class="`ip-${pack}-${name}`"></i>
+    <i :class="`ip-${pack}-${name}`"></i>
 </template>
 
 <script>
