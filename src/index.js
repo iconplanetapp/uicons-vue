@@ -56,14 +56,14 @@ export default {
                     if (validPackages.includes(config.defaultPackage))
                         defaultPackage = config.defaultPackage
                     else
-                        throw new Exception(`"defaultPackage" "${defaultPackage}" is not supported on this version.`, 'Invalid config value')
+                        throw new Exception(`"defaultPackage" "${config.defaultPackage}" is not supported on this version.`, 'Invalid config value')
                 }
 
                 $IconPlanet.defaultPackage = defaultPackage
 
                 packages.map(i => {
                     try {
-                        import('@iconplanet/uicons/css/ip-' + i)
+                        import(`@iconplanet/uicons/css/ip-${i}.css`)
                     } catch (e) {
                         throw new Exception(`Webfont stylesheet file for "${i}" package, did not exist.`, 'File not found')
                     }
