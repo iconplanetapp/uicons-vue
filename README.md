@@ -16,10 +16,16 @@ npm i @iconplanet/uicons-vue
 
 Simply import and add our vue plugin into the project:
 
+make sure import stylesheets for your selected uicon packages from ```@iconplanet/uicons```.
+
+You can find more about how to import webfont stylesheets from [npm](https://www.npmjs.com/package/@iconplanet/uicons) or [GitHub](https://github.com/iconplanetapp/uicons)
+
 ``` js
 import { createApp } from 'vue'
 import IconPlanet from '@iconplanet/uicons-vue'
 import App from 'app.vue'
+import '@iconplanet/uicons/css/ip-brands.css'
+import '@iconplanet/uicons/css/ip-awesome-regular.css'
 
 const app = createApp(App)
 
@@ -28,14 +34,6 @@ app.use(IconPlanet, {
   // customize component name. 
   // Default is : 'iconplanet-uicon'
   componentName: 'uicon', 
-  // select preview type from 'webfont' or 'svg' mode
-  // Default is: 'webfont'
-  previewType: 'webfont',
-  // select packages you want to use here
-  packages: ['brands', 'awesome-regular'], 
-  // select default package if not select any package component will use this package as default. 
-  // Default is: first package in "packages" config item
-  defaultPackage: 'awesome-regular' 
 })
 
 app.mount('#app')
@@ -52,16 +50,12 @@ Simply add icons with passing uicons package name and icon name as props on sele
   <div>
     <h1>My Vue.js Application</h1>
 
-    <!-- add uicons -->
+    <!-- add uicons / custom component name -->
     <uicon package="brands" name="vuejs"/>
 
-    <!-- with default component name -->
-    <iconplanet-uicon package="ar" name="user"/>
+    <!-- add uicons / default component name -->
+    <iconplanet-uicon package="awesome-regular" name="user"/>
 
-    
-    <!-- icon with default package name. default is 'awesome-regular' package here! -->
-    <iconplanet-uicon name="home"/>
   <div>
 </template>
-
 ```

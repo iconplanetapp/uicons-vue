@@ -12,7 +12,7 @@ export default {
     props: {
         package: {
             type: String,
-            default: null
+            required: true
         },
         name: {
             type: String,
@@ -20,7 +20,7 @@ export default {
         }
     },
     mounted() {
-        this.pack = this.package ? this.package : this.$IconPlanet.defaultPackage
+        this.pack = this.package
     }
 }
 </script>
