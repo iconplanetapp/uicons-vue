@@ -29,7 +29,7 @@ export default {
                     throw new Exception('Please select a valid "previewType". It could be on of: "webfont" or "svg".', 'Invalid config value')
             }
 
-            if (type == 'webfont') {
+            if (previewType == 'webfont') {
                 let packages = []
                 const validPackages = ['*', 'all', 'brands', 'awesome-regular', 'ar']
                 if (config.packages) {
