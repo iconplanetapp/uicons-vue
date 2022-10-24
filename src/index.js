@@ -63,7 +63,7 @@ export default {
 
                 packages.map(i => {
                     try {
-                        import(`@iconplanet/uicons/css/ip-${i}`)
+                        import('@iconplanet/uicons/css/ip-' + i)
                     } catch (e) {
                         throw new Exception(`Webfont stylesheet file for "${i}" package, did not exist.`, 'File not found')
                     }
@@ -77,7 +77,7 @@ export default {
             app.config.globalProperties.$IconPlanet = $IconPlanet
             
         } catch(e) {
-            console.warn('[Sadrix-Vue-Fomr]: Something goes wrong');
+            console.warn(`[@iconplanet/uicons-vue]: ${e.message}`);
         }
     }
 }
