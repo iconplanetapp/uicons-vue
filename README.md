@@ -1,5 +1,11 @@
 # <img src="https://iconplanet.app/images/logo.svg" height="28" style="vertical-align:middle"> IconPlanet &nbsp;<img src="https://iconplanet.app/images/uicons-logo.svg" height="28" style="vertical-align:middle">
 
+## Source and search
+
+You can find thousands uicon in [IconPlanet website](https://iconplanet.app/). 
+
+## About
+
 Vue.js (v2 and v3) components, Created to make [IconPlanet Uicons](https://github.com/iconplanetapp/uicons) easier to use in [Vue.js](https://vuejs.org/) web applications. 
 
 # Get Started
