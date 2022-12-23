@@ -1,5 +1,11 @@
 export default {
     computed: {
+        classes() {
+            var default_class_name = this.$IconPlanet.className
+            return [
+                default_class_name,
+            ]
+        },
         style() {
             let style = {
                 display: 'inline-block',

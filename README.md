@@ -57,12 +57,12 @@ const app = createApp(App)
 
 // Add IconPlanet plugin to your Vue app
 app.use(IconPlanet, {
-  // customize component name. 
+  // Customize component name. 
   // Default is : 'iconplanet-uicon'
   componentName: 'uicon', 
 
-  // set preview type to webfont
-  // default is -> webfont
+  // Set preview type to webfont
+  // Default is -> webfont
   previewType: 'webfont', 
 })
 
@@ -102,12 +102,12 @@ const app = createApp(App)
 
 // Add IconPlanet plugin to your Vue app
 app.use(IconPlanet, {
-  // customize component name. 
+  // Customize component name. 
   // Default is : 'iconplanet-uicon'
   componentName: 'uicon', 
 
-  // set preview type to svg
-  // default is -> webfont
+  // Set preview type to svg
+  // Default is -> webfont
   previewType: 'svg', 
 
   // pass all your uicons here to use in plugin components
@@ -160,6 +160,34 @@ There is some useful props can use as props:
 
   <div>
 </template>
+```
+
+# Custom class name
+
+Simply can change component default class name from ```ip-uicon``` to everything you want, just pass ```className``` in your plugin config at plugin use method:
+
+``` js
+// --> app.js
+
+import { createApp } from 'vue'
+import IconPlanet from '@iconplanet/uicons-vue'
+import App from 'app.vue'
+import uicons from './uicons'
+
+const app = createApp(App)
+
+// Add IconPlanet plugin to your Vue app
+app.use(IconPlanet, {
+  // Customize component name. 
+  // Default is : 'iconplanet-uicon'
+  componentName: 'uicon', 
+
+  // Set components default class name
+  // default is -> ip-uicon
+  className: 'app-uicon'
+})
+
+app.mount('#app')
 ```
 
 # Premium Uicon packages

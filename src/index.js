@@ -19,6 +19,14 @@ const detectComponentName = (config) => {
         return def
 }
 
+const detectClassName = (config) => {
+    const def = 'ip-uicon'
+    if (config && typeof config == 'object' && config.hasOwnProperty('className') && typeof config.componentName == 'string')
+        return config.className
+    else
+        return def
+}
+
 const detectLibraryIcons = (config) => {
     const def = []
     if (config && typeof config == 'object' && config.hasOwnProperty('icons') && Array.isArray(config.icons))
@@ -32,10 +40,12 @@ export default {
         try {
             const previewType = detectPreviewType(config)
             const componentName = detectComponentName(config)
+            const className = detectClassName(config)
 
             let $IconPlanet = {
                 previewType,
                 componentName,
+                className,
                 library: new Library()
             } 
 

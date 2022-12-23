@@ -1,7 +1,7 @@
 <template>
     <svg
         v-if="icon"
-        class="ip-uicon"
+        :class="classes"
         :style="style"
         :data-name="icon.name"
         :data-package="icon.packageName"
@@ -15,18 +15,19 @@ import mixins from '../mixins'
 export default {
     data() {
         return {
+            pack: '',
             icon: null
         }
     },
     mixins: [mixins],
     props: {
+        package: {
+            type: String,
+            required: true
+        },
         name: {
             type: String,
             required: true,
-        },
-        package: {
-            type: String,
-            default: "custom"
         },
     },
     mounted() {

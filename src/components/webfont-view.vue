@@ -1,7 +1,9 @@
 <template>
     <i 
         v-if="pack && name"
-        :class="`ip-uicon ip-${pack}-${name}`"
+        :class="classes"
+        :data-name="name"
+        :data-package="pack"
         :style="style">
     </i>
 </template>
