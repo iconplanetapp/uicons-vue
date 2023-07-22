@@ -19,9 +19,9 @@ class c {
     return t;
   }
 }
-class r {
+class o {
   constructor(t) {
-    this.name = r.validate(t), this.icons = {};
+    this.name = o.validate(t), this.icons = {};
   }
   addIcon(t) {
     if (!t instanceof c)
@@ -129,15 +129,10 @@ const u = {
   }
 }, g = (e, t) => {
   const a = e.__vccOpts || e;
-  for (const [n, s] of t)
-    a[n] = s;
+  for (const [n, r] of t)
+    a[n] = r;
   return a;
 }, w = {
-  data() {
-    return {
-      pack: ""
-    };
-  },
   mixins: [u],
   props: {
     package: {
@@ -149,11 +144,13 @@ const u = {
       required: !0
     }
   },
-  mounted() {
-    this.pack = r.validate(this.package);
+  computed: {
+    pack() {
+      return o.validate(this.package);
+    }
   }
 }, k = ["data-name", "data-package"];
-function v(e, t, a, n, s, o) {
+function v(e, t, a, n, r, s) {
   return s.pack && a.name ? (l(), p("i", {
     key: 0,
     class: h(e.classes),
@@ -163,12 +160,6 @@ function v(e, t, a, n, s, o) {
   }, null, 14, k)) : d("", !0);
 }
 const b = /* @__PURE__ */ g(w, [["render", v]]), I = {
-  data() {
-    return {
-      pack: "",
-      icon: null
-    };
-  },
   mixins: [u],
   props: {
     package: {
@@ -180,11 +171,14 @@ const b = /* @__PURE__ */ g(w, [["render", v]]), I = {
       required: !0
     }
   },
-  mounted() {
-    this.icon = this.$IconPlanet.library.getIcon(this.name, this.package);
+  computed: {
+    icon() {
+      var e, t;
+      return (t = (e = this.$IconPlanet) == null ? void 0 : e.library) == null ? void 0 : t.getIcon(this.name, this.package);
+    }
   }
 }, S = ["data-name", "data-package", "viewBox"], N = ["d"];
-function _(e, t, a, n, s, o) {
+function _(e, t, a, n, r, s) {
   return s.icon ? (l(), p("svg", {
     key: 0,
     class: h(e.classes),
@@ -201,10 +195,10 @@ function _(e, t, a, n, s, o) {
 const P = /* @__PURE__ */ g(I, [["render", _]]);
 class $ {
   constructor() {
-    this.packages = {}, this.packages.custom = new r("custom");
+    this.packages = {}, this.packages.custom = new o("custom");
   }
   add(t) {
-    t = new c(t), this.packages.hasOwnProperty(t.packageName) || (this.packages[t.packageName] = new r(t.packageName)), this.packages[t.packageName].addIcon(t);
+    t = new c(t), this.packages.hasOwnProperty(t.packageName) || (this.packages[t.packageName] = new o(t.packageName)), this.packages[t.packageName].addIcon(t);
   }
   addAll(t) {
     if (typeof t == "array")
@@ -230,20 +224,20 @@ const O = (e) => {
 }, L = {
   install(e, t) {
     try {
-      const a = O(t), n = B(t), s = T(t);
-      let o = {
+      const a = O(t), n = B(t), r = T(t);
+      let s = {
         previewType: a,
         componentName: n,
-        className: s,
+        className: r,
         library: new $()
       };
       if (a == "webfont")
         e.component(n, b);
       else {
         const y = x(t);
-        o.library.addAll(y), e.component(n, P);
+        s.library.addAll(y), e.component(n, P);
       }
-      e.config.globalProperties.$IconPlanet = o, console.log("[@iconplanet/uicons-vue]: Installed successfully.");
+      e.config.globalProperties.$IconPlanet = s, console.log("[@iconplanet/uicons-vue]: Installed successfully.");
     } catch (a) {
       console.warn(`[@iconplanet/uicons-vue]: ${a.message}`);
     }
