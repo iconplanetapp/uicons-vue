@@ -12,11 +12,6 @@
 import Package from '../models/package'
 import mixins from '../mixins'
 export default {
-    data() {
-        return {
-            pack: ''
-        }
-    },
     mixins: [mixins],
     props: {
         package: {
@@ -28,8 +23,10 @@ export default {
             required: true
         }
     },
-    mounted() {
-        this.pack = Package.validate(this.package)
+    computed: {
+        pack() {
+            return Package.validate(this.package)
+        }
     }
 }
 </script>

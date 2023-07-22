@@ -13,12 +13,6 @@
 <script>
 import mixins from '../mixins'
 export default {
-    data() {
-        return {
-            pack: '',
-            icon: null
-        }
-    },
     mixins: [mixins],
     props: {
         package: {
@@ -30,8 +24,10 @@ export default {
             required: true,
         },
     },
-    mounted() {
-        this.icon = this.$IconPlanet.library.getIcon(this.name, this.package)
+    computed: {
+        icon() {
+            return this.$IconPlanet?.library?.getIcon(this.name, this.package)
+        }
     }
 }
 </script>

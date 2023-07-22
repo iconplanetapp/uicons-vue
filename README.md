@@ -197,3 +197,13 @@ All Uicons packages published on ```@iconplanet/uicons``` are Free licensed ones
 If you want to use our ```Premium Uicon Packages``` you need to download them directly from [IconPlanet website](https://iconplanet.app/), then add files in your project and import icons and stylesheets manualy.
 
 Other steps are completly simular to API explaind in this documentation.
+
+# Changelog
+
+## 1.1.3
+
+Make svg view and webfont view dynamic when app change [name] or [package] props of each icon. 
+
+## 1.1.2
+
+upgrade to vue 3 🎉
